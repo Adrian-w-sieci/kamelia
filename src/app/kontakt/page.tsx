@@ -22,7 +22,7 @@ export default function Page () {
 			    ></iframe>
 				<div className="text-2xl ml-5 mt-10 flex">
 					<div className="gap-10">
-						<p>Pracownia florystyczna "Kamelia"</p>
+						<p>Pracownia florystyczna &quot;Kamelia&quot;</p>
 						<p>Aneta Zelent-Kata</p>
 						<p>22-100 Chełm, ul. Szymanowskiego 7</p>
 					</div>

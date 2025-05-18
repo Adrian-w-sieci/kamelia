@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import MediaLinks from '@/app/ui/media-links';
 
 export default function MediaNav() {
