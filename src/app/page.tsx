@@ -19,7 +19,7 @@ export default function Page () {
           className="hidden md:block"
           alt="logo"
         />
-        <MediaNav className="text-xs" />
+        <MediaNav />
       </div>
     </main>
   )
