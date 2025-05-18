@@ -11,7 +11,7 @@ import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-export default function App({ photos }) {
+export default function App({ photos }: { photos: photos[] }) {
   const [index, setIndex] = React.useState(-1);
 
   return (
