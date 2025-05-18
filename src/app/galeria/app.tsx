@@ -9,9 +9,17 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";\
 
-export default function App({ photos }: { photos: any[] }) {
+
+type gallery = {
+    src: string;
+    width: number;
+    height: number;
+  };
+
+
+export default function App({ photos }: { photos: gallery[] }) {
   const [index, setIndex] = React.useState(-1);
 
   return (
