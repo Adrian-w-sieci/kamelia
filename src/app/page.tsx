@@ -11,7 +11,7 @@ export default function Page () {
       <div className="absolute w-full md:w-auto">
         <Nav />
       </div>
-      <div className="w-full flex flex-col items-center justify-center md:mr-150 md:mb-20">
+      <div className="w-full h-full flex flex-col items-center mt-[25%] md:mt-[7%] md: md:mr-150">
         <Image
           src="/zlote-logo.png"
           width={700}
