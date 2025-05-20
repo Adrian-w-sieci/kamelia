@@ -9,7 +9,7 @@ const media = [
 export default function MediaLinks() {
 	return (
 		<div className="flex gap-3 items-center">
-			<p className="text-base md:text-2xl">Zobacz nas na:</p>
+			<p className="text-lg lg:text-2xl">Zobacz nas na:</p>
 			{media.map((link) => {
 				return (
 					<div className="flex" key={link.name}>

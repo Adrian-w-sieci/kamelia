@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { custom_font } from './ui/fonts';
+import { sacramento } from './ui/fonts';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={sacramento.className}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${custom_font.className} bg-white antialiased`}
       >

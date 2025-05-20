@@ -1,3 +1,6 @@
-import { Josefin_Sans } from 'next/font/google';
+import { Nunito } from 'next/font/google';
+import { Sacramento } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 
-export const custom_font = Josefin_Sans({ subsets: ['latin'], weight: '400' });
+export const custom_font = Nunito({ subsets: ['latin'], weight: '400' });
+export const sacramento = Sacramento({ subsets: ['latin'], weight: '400' });

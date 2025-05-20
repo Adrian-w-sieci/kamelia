@@ -2,20 +2,20 @@ import Link from 'next/link';
 
 const links = [
 	{name: 'Strona główna', href: '/' },
-	{name: 'Zobacz galerię', href: '/galeria' },
+	{name: 'Galeria', href: '/galeria' },
 	{name: 'Kontakt', href: '/kontakt' },
 ];
 
 
 export default function NavLinks() {
 	return (
-		<div className="flex justify-center gap-5 md:gap-15 mt-5 md:ml-5">
+		<div className="flex lg:gap-15 ml-[5%] mt-[1%] lg:ml-5">
 			{links.map((link) => {
 				return (
 						<Link
 							key={link.name}
 							href={link.href}
-							className="flex h-[48px] grow items-center justify-center gap-2 p-3 text-base md:text-2xl font-normal hover:text-white md:flex-none md:justify-start p-2 px-3"
+							className="flex h-[48px] grow items-center gap-2 text-lg lg:text-2xl font-normal hover:text-white lg:flex-none lg:justify-start"
 						>
 							<p className="">{link.name}</p>
 						</Link>
