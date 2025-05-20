@@ -15,7 +15,7 @@ export default function NavLinks() {
 						<Link
 							key={link.name}
 							href={link.href}
-							className="flex h-[48px] grow items-center justify-center gap-2 p-3 text-2xl font-normal hover:text-white md:flex-none md:justify-start p-2 px-3"
+							className="flex h-[48px] grow items-center justify-center gap-2 p-3 text-base md:text-2xl font-normal hover:text-white md:flex-none md:justify-start p-2 px-3"
 						>
 							<p className="">{link.name}</p>
 						</Link>

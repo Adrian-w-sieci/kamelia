@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import { useWindowSize } from 'react-use';
 
 import { ColumnsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/columns.css";
@@ -21,10 +22,12 @@ type gallery = {
 
 export default function App({ photos }: { photos: gallery[] }) {
   const [index, setIndex] = React.useState(-1);
+  const { width } = useWindowSise();
+  const columns = width < 768 ? 3 : 4;
 
   return (
     <>  
-      <ColumnsPhotoAlbum photos={photos} columns={4} onClick={({ index }) => setIndex(index)} />
+      <ColumnsPhotoAlbum photos={photos} columns={columns} onClick={({ index }) => setIndex(index)} />
 
       <Lightbox
         styles={{ container: {backgroundColor: "rgba(15,15,15,0.9)"} }}
