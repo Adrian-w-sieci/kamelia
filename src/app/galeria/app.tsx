@@ -22,7 +22,7 @@ type gallery = {
 
 export default function App({ photos }: { photos: gallery[] }) {
   const [index, setIndex] = React.useState(-1);
-  const { width } = useWindowSise();
+  const { width } = useWindowSize();
   const columns = width < 768 ? 3 : 4;
 
   return (
