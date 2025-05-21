@@ -9,7 +9,7 @@ export default function Page () {
 			<div className="absolute w-full h-[10%]">
         		<Nav />
       		</div>
-      		<div className="w-full max-w-[80%] lg:max-w-[50%] mx-auto max-h-[40%] mt-[30%] lg:mt-40 lg:ml-[5%]">
+      		<div className="w-full max-w-[80%] lg:max-w-[50%] mx-auto max-h-[40%] mt-30 lg:mt-40 lg:ml-[5%]">
       			<iframe
 			        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.1253490375325!2d23.461339677198985!3d51.12459587172882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47239a54dc3d58ab%3A0x3fb3eb7801281be6!2sPracownia%20florystyczna%20Kamelia%20Aneta%20Zelent!5e0!3m2!1spl!2spl!4v1747149572750!5m2!1spl!2spl"
 			        width="800"

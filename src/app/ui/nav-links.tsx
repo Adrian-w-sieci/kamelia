@@ -9,7 +9,7 @@ const links = [
 
 export default function NavLinks() {
 	return (
-		<div className="flex lg:gap-15 ml-[5%] mt-[1%] lg:ml-5">
+		<div className="flex lg:gap-40 ml-[5%] mt-[1%] lg:ml-5">
 			{links.map((link) => {
 				return (
 						<Link
