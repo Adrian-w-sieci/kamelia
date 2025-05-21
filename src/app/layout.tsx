@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={sacramento.className}>
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${custom_font.className} bg-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${custom_font.className} antialiased text-shadow-lg/30 text-shadow-yellow-200`}
       >
         {children}
       </body>

@@ -8,7 +8,7 @@ const media = [
 
 export default function MediaLinks() {
 	return (
-		<div className="flex gap-3 items-center">
+		<div className="flex gap-4 items-center">
 			<p className="text-lg lg:text-2xl">Zobacz nas na:</p>
 			{media.map((link) => {
 				return (
@@ -16,7 +16,7 @@ export default function MediaLinks() {
 						<Link
 							key={link.name}
 							href={link.href}
-							className="flex h-[48px] grow items-center justify-center gap-2 p-3 text-2xl hover:text-white md:flex-none md:justify-start md:p-2 md: px-3"
+							className="border-b-1 border-r-1 rounded-sm shadow-lg/30 shadow-yellow-200  px-2 flex h-[48px] grow items-center justify-center gap-2 p-3 text-2xl hover:text-white md:flex-none md:justify-start md:p-2 md: px-3"
 						>
 							<Image src={link.icon} alt="logo" width={30} height={30} className="inline-block object-contain" />
 						</Link>
