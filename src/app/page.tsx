@@ -257,7 +257,7 @@ export default function Page () {
               width="100%"
               height="400"
               style={{ border: 0 }}
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full"
