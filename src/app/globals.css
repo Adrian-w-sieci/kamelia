@@ -1,7 +1,11 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 :root {
-  --background: rgb(15, 15, 15);
+  --background: oklch(0.147 0.004 49.25);
   --foreground: rgb(255, 215, 129);
 }
 
@@ -14,15 +18,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(15, 15, 15);
+    --background: oklch(0.147 0.004 49.25);
     --foreground:rgb(255, 215, 129);
   }
 }
+
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 h1 {

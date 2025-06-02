@@ -1,26 +1,45 @@
-import Link from 'next/link';
+'use-client'
 
-const links = [
-	{name: 'Strona główna', href: '/' },
-	{name: 'Galeria', href: '/galeria' },
-	{name: 'Kontakt', href: '/kontakt' },
-];
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
+export default function MobileMenu() {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function NavLinks() {
-	return (
-		<div className="flex gap-[8%] lg:gap-20 ml-[5%] mt-[1%] lg:ml-5">
-			{links.map((link) => {
-				return (
-						<Link
-							key={link.name}
-							href={link.href}
-							className="mask-l-from-80% border-b-1 border-r-1 rounded-sm shadow-lg/30 shadow-yellow-200 flex px-2 gap-2 text-lg lg:text-2xl font-normal hover:text-white lg:flex-none lg:justify-start"
-						>
-							<p className="">{link.name}</p>
-						</Link>
-				)
-			})}
-		</div>
-	);
-};
+  return (
+      <div className="relative z-40 flex justify-center">
+        {/* Przycisk hamburgera */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="fixed z-50 top-4 p-2 text-yellow-300/90 bg-black/50 rounded-md shadow-md"
+          aria-label="Toggle menu"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+      )}
+
+      {/* Tło (kliknięcie zamyka menu) */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/30 z-40 backdrop-blur-sm"
+        />
+      )}
+
+      {/* Menu wysuwane */}
+      <div
+        className={`fixed top-0 left-0 w-full bg-black/30 shadow-md transition-transform duration-300 ease-in-out z-50 ${
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <nav className="flex flex-col items-center py-8 space-y-6 text-lg font-semibold">
+          <a href="#home" onClick={() => setIsOpen(false)}>Strona główna</a>
+          <a href="/galeria" onClick={() => setIsOpen(false)}>Galeria</a>
+          <a href="#oferta" onClick={() => setIsOpen(false)}>Oferta</a>
+          <a href="#kontakt" onClick={() => setIsOpen(false)}>Kontakt</a>
+        </nav>
+      </div>
+    </div>
+  );
+}
