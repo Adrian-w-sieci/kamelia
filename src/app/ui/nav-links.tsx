@@ -33,7 +33,7 @@ export default function MobileMenu() {
           isOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <nav className="flex flex-col items-center py-8 space-y-6 text-lg font-semibold">
+        <nav className="flex flex-col items-center py-8 space-y-6 text-lg">
           <a href="#home" onClick={() => setIsOpen(false)}>Strona główna</a>
           <a href="/galeria" onClick={() => setIsOpen(false)}>Galeria</a>
           <a href="#oferta" onClick={() => setIsOpen(false)}>Oferta</a>

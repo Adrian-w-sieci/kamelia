@@ -7,8 +7,6 @@ export default function Page() {
   return (
     <main>
       <div>
-      </div>
-      <div>
         <App photos={photos} />
       </div>
     </main>
