@@ -51,6 +51,12 @@ export default function Page () {
       
       {/* Strona główna */}
       <div id="home" className="p-10 lg:px-150 min-h-screen flex items-center justify-center bg-gradient-to-b from-stone-950 to-stone-900 px-4 sticky top-0 z-10">
+        
+        {/* strzałka */}
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
