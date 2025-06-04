@@ -15,7 +15,7 @@ export default function Page () {
 
       {/* Front */}
       <div className="flex flex-col justify-center lg:h-[90vh] sticky top-0
-        h-[90vh]">
+        h-[85vh]">
 
         {/* Tło */}
         <Image src='/2.jpg' alt='bg1' fill className="absolute brightness-80 object-cover object-bottom lg:rounded-b-4xl rounded-b-2xl mask-x-from-95% mask-x-to-105%"/>
