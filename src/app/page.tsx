@@ -14,11 +14,11 @@ export default function Page () {
     <main className="flex flex-col">
 
       {/* Front */}
-      <div className="flex flex-col justify-center lg:h-screen sticky top-0
-        h-[95vh]">
+      <div className="flex flex-col justify-center lg:h-[90vh] sticky top-0
+        h-[90vh]">
 
         {/* Tło */}
-        <Image src='/2.jpg' alt='bg1' fill className="absolute brightness-80 object-cover object-bottom mask-x-from-95% mask-x-to-105%"/>
+        <Image src='/2.jpg' alt='bg1' fill className="absolute brightness-80 object-cover object-bottom lg:rounded-b-4xl rounded-b-2xl mask-x-from-95% mask-x-to-105%"/>
         
         {/* Menu */}
         <div className="w-full z-50">
@@ -37,26 +37,13 @@ export default function Page () {
               w-[35vh] h-[35vh]">
                <Image
                  src="/zlote-logo.png"
-                 width={350}
-                 height={350}
+                 width={320}
+                 height={320}
                  alt="logo"
-                 className="drop-shadow-md"
+                 className="drop-shadow-md lg:w-auto w-50"
                />
              </div>
           </motion.div>
-        </div>
-
-        {/* Strzałka */}
-        <div className="flex justify-center z-10 w-auto">
-          <button onClick={() => {
-            const el = document.getElementById("home");
-            if (el) {el.scrollIntoView();}}}
-            className="mb-4 p-2 text-yellow-300/90 bg-black/50 rounded-md shadow-md"
-            aria-label="ChevronDown"
-          >
-            <ChevronDown className="lg:w-6 lg:h-6
-              w-5 h-5" />
-          </button>
         </div>
       </div>
       
@@ -76,7 +63,7 @@ export default function Page () {
             text-4xl">Dekorujemy od 2014 roku</p>
 
           {/* Guziki */}
-          <div className="lg:p-15 p-5">
+          <div className="lg:p-15 p-8">
             <button
               onClick={() => {
                 const el = document.getElementById("oferta");
@@ -245,7 +232,7 @@ export default function Page () {
           >
             <p className="text-xl lg:text-2xl font-semibold text-balance">Pracownia florystyczna &quot;Kamelia&quot; - Aneta Zelent-Kata</p>
             <p className="text-sm lg:text-base"><strong>Adres:</strong> ul. Szymanowskiego 7, 22-100 Chełm</p>
-            <p className="text-sm lg:text-base"><strong>Telefon:</strong> <a href="tel:+48509863035" className="text-sm lg:text-base text-blue-300 hover:underline">+48 123 456 789</a></p>
+            <p className="text-sm lg:text-base"><strong>Telefon:</strong> <a href="tel:+48509863035" className="text-sm lg:text-base text-blue-300 hover:underline">+48 509 863 035</a></p>
             <p className="text-sm lg:text-base mt-6 text-gray-300">
               Skontaktuj się z nami, a wspólnie stworzymy wyjątkową dekorację na Twoją okazję!
             </p>
