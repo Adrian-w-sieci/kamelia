@@ -14,7 +14,8 @@ export default function Page () {
     <main className="flex flex-col">
 
       {/* Front */}
-      <div className="flex flex-col justify-center h-screen sticky top-0">
+      <div className="flex flex-col justify-center lg:h-screen sticky top-0
+        h-[95vh]">
 
         {/* Tło */}
         <Image src='/2.jpg' alt='bg1' fill className="absolute brightness-80 object-cover object-bottom mask-x-from-95% mask-x-to-105%"/>
@@ -32,7 +33,8 @@ export default function Page () {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <div className="flex w-[60vh] h-[60vh] justify-center items-center">
+            <div className="flex lg:w-[60vh] lg:h-[60vh] justify-center items-center
+              w-[35vh] h-[35vh]">
                <Image
                  src="/zlote-logo.png"
                  width={350}
@@ -52,7 +54,8 @@ export default function Page () {
             className="mb-4 p-2 text-yellow-300/90 bg-black/50 rounded-md shadow-md"
             aria-label="ChevronDown"
           >
-            <ChevronDown className="w-6 h-6" />
+            <ChevronDown className="lg:w-6 lg:h-6
+              w-5 h-5" />
           </button>
         </div>
       </div>
@@ -60,7 +63,7 @@ export default function Page () {
       {/* Content */}
       
       {/* Strona główna */}
-      <div id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-stone-950 to-stone-900 px-4 sticky top-0 z-10">
+      <div id="home" className="p-10 lg:px-150 min-h-screen flex items-center justify-center bg-gradient-to-b from-stone-950 to-stone-900 px-4 sticky top-0 z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,11 +72,11 @@ export default function Page () {
           className="text-center space-y-6"
         >
           
-          <p className="text-5xl">Zaprojektujemy dla ciebie dekorację</p>
-          <p className="text-5xl">na każdą okazję</p>
+          <p className="lg:text-5xl p-2 underline decoration-white decoration-2 underline-offset-3
+            text-4xl">Dekorujemy od 2014 roku</p>
 
           {/* Guziki */}
-          <div className="p-6">
+          <div className="lg:p-15 p-5">
             <button
               onClick={() => {
                 const el = document.getElementById("oferta");
@@ -81,9 +84,10 @@ export default function Page () {
                   el.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="group relative inline-flex items-center justify-center px-6 py-3 mt-6 lg:mr-2 overflow-hidden text-lg font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 shadow-lg hover:from-yellow-500 hover:to-yellow-700 hover:scale-105 hover:shadow-yellow-500/50 focus:outline-none"
+              className="group relative inline-flex items-center justify-center px-6 py-3 lg:mr-2 lg:mb-0 mb-1 overflow-hidden text-lg font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 shadow-lg hover:from-yellow-500 hover:to-yellow-700 hover:scale-105 hover:shadow-yellow-500/50 focus:outline-none"
             >
-              <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300">
+              <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300 lg:text-medium
+                text-sm">
                 Zobacz naszą ofertę
               </span>
               <span className="absolute inset-0 w-full h-full transition-opacity duration-300 bg-white opacity-0 group-hover:opacity-10 rounded-full"></span>
@@ -92,9 +96,10 @@ export default function Page () {
 
             <Link href="/galeria">
               <button
-                className="group relative inline-flex items-center justify-center px-6 py-3 mt-4 lg:ml-2 overflow-hidden text-lg font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg focus:outline-none"
+                className="group relative inline-flex items-center justify-center px-6 py-3 lg:ml-2 lg:mt-0 mt-1 overflow-hidden text-lg font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg focus:outline-none"
               >
-                <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300">
+                <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300 lg:text-md
+                  text-sm">
                   Zobacz nasze prace
                 </span>
                 <span className="absolute inset-0 w-full h-full transition-opacity duration-300 bg-white opacity-0 group-hover:opacity-10 rounded-full"></span>
@@ -103,9 +108,10 @@ export default function Page () {
             </Link>
           </div>
 
-          <p className="text-4xl p-2 underline decoration-white decoration-2 underline-offset-3">Dekorujemy od 2014 roku</p>
+          <p className="lg:text-4xl text-3xl text-balance">Zaprojektujemy dla ciebie dekorację na każdą okazję</p>
+
           <div>
-            <p className="text-3xl p-4">Jesteśmy na</p>
+            <p className="lg:text-3xl text-2xl p-4">Jesteśmy na</p>
             <MediaNav />
           </div>
         </motion.div>
@@ -127,12 +133,12 @@ export default function Page () {
             <Image
               src="/zlote-logo.png"
               alt="Logo firmy"
-              width={270}
-              height={270}
-              className="mx-auto drop-shadow-lg"
+              width={250}
+              height={250}
+              className="mx-auto drop-shadow-lg lg:w-auto w-53"
             />
-            <p className={`${sacramento.className} lg:text-6xl text-5xl mt-2`}>Z miłością</p>
-            <p className={`${sacramento.className} lg:text-6xl text-5xl`}>do kwiatów</p>
+            <p className={`${sacramento.className} lg:text-6xl text-4xl mt-2`}>Z miłością</p>
+            <p className={`${sacramento.className} lg:text-6xl text-4xl`}>do kwiatów</p>
           </motion.div>
           <div className="absolute inset-0 -z-10" />
         </section>
@@ -146,11 +152,11 @@ export default function Page () {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-semibold text-center mb-10"
+              className="lg:text-3xl text-2xl font-semibold text-center mb-10"
             >
               Nasza oferta
             </motion.h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:gap-6 gap-3 lg:text-lg text-sm">
               {[
                 "Dekoracje ślubne",
                 "Dekoracje kościołów i sal weselnych",
@@ -165,7 +171,7 @@ export default function Page () {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-yellow-200/20 text-white lg:p-6 rounded-xl inset-shadow-sm inset-shadow-black transition-shadow
+                  className="bg-yellow-100/40 text-white lg:p-6 rounded-xl inset-shadow-sm inset-shadow-black transition-shadow
                   p-2"
                 >
                   {item}
@@ -174,7 +180,7 @@ export default function Page () {
             </ul>
             
           {/* Guziki */}
-            <div className="flex flex-col items-center mt-16">
+            <div className="flex flex-col items-center lg:mt-16 mt-10">
               <button
                 onClick={() => {
                   const el = document.getElementById("kontakt");
@@ -182,7 +188,7 @@ export default function Page () {
                     el.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="group relative inline-flex items-center justify-center px-6 py-3 mt-4 overflow-hidden rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 text-white font-medium transition-all duration-300 ease-in-out hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg lg:text-xl"
+                className="group relative inline-flex items-center justify-center lg:px-6 px-5 py-3 mt-4 overflow-hidden lg:text-xl text-sm rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 text-white font-medium transition-all duration-300 ease-in-out hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg"
               >
                 <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300">
                   Skontaktuj się z nami
@@ -194,7 +200,7 @@ export default function Page () {
 
               <Link href="/galeria">
                 <button
-                  className="group relative inline-flex items-center justify-center px-6 py-3 mt-4 lg:ml-2 overflow-hidden lg:text-xl lg:font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg focus:outline-none"
+                  className="group relative inline-flex items-center justify-center px-6 py-3 mt-4 lg:ml-2 overflow-hidden lg:text-xl text-sm text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg focus:outline-none"
                 >
                   <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300">
                     Zobacz nasze prace
@@ -214,7 +220,7 @@ export default function Page () {
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-center mb-8"
+          className="text-2xl lg:text-5xl font-bold text-center mb-8"
         >
           Skontaktuj się z nami
         </motion.h1>
@@ -223,7 +229,7 @@ export default function Page () {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-center max-w-2xl mb-12"
+          className="text-base lg:text-xl text-center max-w-2xl mb-12"
         >
           Masz pytania, chcesz zarezerwować dekorację lub poznać szczegóły naszej oferty?
           Skontaktuj się z nami — chętnie pomożemy!
@@ -237,10 +243,10 @@ export default function Page () {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-semibold text-balance">Pracownia florystyczna &quot;Kamelia&quot; - Aneta Zelent-Kata</h2>
-            <p><strong>Adres:</strong> ul. Szymanowskiego 7, 22-100 Chełm</p>
-            <p><strong>Telefon:</strong> <a href="tel:+48509863035" className="text-blue-300 hover:underline">+48 123 456 789</a></p>
-            <p className="mt-6 text-gray-300">
+            <p className="text-xl lg:text-2xl font-semibold text-balance">Pracownia florystyczna &quot;Kamelia&quot; - Aneta Zelent-Kata</p>
+            <p className="text-sm lg:text-base"><strong>Adres:</strong> ul. Szymanowskiego 7, 22-100 Chełm</p>
+            <p className="text-sm lg:text-base"><strong>Telefon:</strong> <a href="tel:+48509863035" className="text-sm lg:text-base text-blue-300 hover:underline">+48 123 456 789</a></p>
+            <p className="text-sm lg:text-base mt-6 text-gray-300">
               Skontaktuj się z nami, a wspólnie stworzymy wyjątkową dekorację na Twoją okazję!
             </p>
           </motion.div>

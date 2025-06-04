@@ -15,7 +15,7 @@ export default function MediaLinks() {
 						<Link
 							key={link.name}
 							href={link.href}
-							className="px-2 flex h-[48px] grow items-center justify-center gap-2 p-3  md:flex-none md:justify-start md:p-2 md: px-3"
+							className="lg:w-auto w-15 px-2 flex h-[48px] grow items-center justify-center gap-2 p-3  md:flex-none md:justify-start md:p-2 md: px-3"
 						>
 							<Image src={link.icon} alt="logo" width={40} height={40} className="inline-block object-contain" />
 						</Link>

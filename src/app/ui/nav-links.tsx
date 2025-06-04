@@ -15,7 +15,8 @@ export default function MobileMenu() {
           className="fixed z-50 top-4 p-2 text-yellow-300/90 bg-black/50 rounded-md shadow-md"
           aria-label="Toggle menu"
         >
-          <Menu className="w-6 h-6" />
+          <Menu className="lg:w-6 lg:h-6
+            w-5 h-5" />
         </button>
       )}
 
