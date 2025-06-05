@@ -7,24 +7,38 @@ import { sacramento } from './ui/fonts'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { motion } from "framer-motion";
-
+import { useEffect, useState } from 'react'
 
 export default function Page () {
+  const [showArrow, setShowArrow] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowArrow(window.scrollY < 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <main className="flex flex-col">
 
       {/* Front */}
-      <div className="flex flex-col justify-center lg:h-[90vh] sticky top-0
-        h-[85vh]">
-
+      <div className="flex flex-col justify-center lg:h-[95vh] sticky top-0 h-[85vh]">
         {/* Tło */}
-        <Image src='/2.jpg' alt='bg1' fill className="absolute brightness-80 object-cover object-bottom lg:rounded-b-4xl rounded-b-2xl mask-x-from-95% mask-x-to-105%"/>
-        
+        <Image
+          src='/2.jpg'
+          alt='bg1'
+          fill
+          className="h-[85vh] absolute brightness-80 object-cover object-bottom lg:rounded-b-4xl rounded-b-2xl mask-x-from-95% mask-x-to-105%"
+        />
+
         {/* Menu */}
         <div className="w-full z-50">
           <Nav />
         </div>
-        
+
         {/* Logo */}
         <div className="w-full h-full flex justify-center items-center z-10">
           <motion.div
@@ -33,29 +47,30 @@ export default function Page () {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <div className="flex lg:w-[60vh] lg:h-[60vh] justify-center items-center
-              w-[35vh] h-[35vh]">
-               <Image
-                 src="/zlote-logo.png"
-                 width={320}
-                 height={320}
-                 alt="logo"
-                 className="drop-shadow-md lg:w-auto w-50"
-               />
-             </div>
+            <div className="flex lg:w-[60vh] lg:h-[60vh] justify-center items-center w-[35vh] h-[35vh]">
+              <Image
+                src="/zlote-logo.png"
+                width={320}
+                height={320}
+                alt="logo"
+                className="drop-shadow-md lg:w-auto w-50"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
-      
+
       {/* Content */}
-      
-      {/* Strona główna */}
-      <div id="home" className="p-10 lg:px-150 min-h-screen flex items-center justify-center bg-gradient-to-b from-stone-950 to-stone-900 px-4 sticky top-0 z-10">
-        
-        {/* strzałka */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
-          <ChevronDown className="w-6 h-6 animate-bounce" />
-        </div>
+      <div
+        id="home"
+        className="p-10 lg:px-150 min-h-screen flex items-center justify-center bg-gradient-to-b from-stone-950 to-stone-900 px-4 sticky top-0 z-10"
+      >
+        {/* Strzałka tylko gdy showArrow === true */}
+        {showArrow && (
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
+            <ChevronDown className="w-6 h-6 animate-bounce" />
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -64,9 +79,9 @@ export default function Page () {
           viewport={{ once: true, amount: 0.5 }}
           className="text-center space-y-6"
         >
-          
-          <p className="lg:text-5xl p-2 underline decoration-white decoration-2 underline-offset-3
-            text-4xl">Dekorujemy od 2014 roku</p>
+          <p className="lg:text-5xl p-2 underline decoration-white decoration-2 underline-offset-3 text-4xl">
+            Dekorujemy od 2014 roku
+          </p>
 
           {/* Guziki */}
           <div className="lg:p-15 p-8">
@@ -79,8 +94,7 @@ export default function Page () {
               }}
               className="group relative inline-flex items-center justify-center px-6 py-3 lg:mr-2 lg:mb-0 mb-1 overflow-hidden text-lg font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 shadow-lg hover:from-yellow-500 hover:to-yellow-700 hover:scale-105 hover:shadow-yellow-500/50 focus:outline-none"
             >
-              <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300 lg:text-medium
-                text-sm">
+              <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300 lg:text-medium text-sm">
                 Zobacz naszą ofertę
               </span>
               <span className="absolute inset-0 w-full h-full transition-opacity duration-300 bg-white opacity-0 group-hover:opacity-10 rounded-full"></span>
@@ -91,8 +105,7 @@ export default function Page () {
               <button
                 className="group relative inline-flex items-center justify-center px-6 py-3 lg:ml-2 lg:mt-0 mt-1 overflow-hidden text-lg font-medium text-white transition-all duration-300 ease-in-out rounded-full bg-gradient-to-r from-yellow-400/50 via-yellow-500/50 to-yellow-600/50 hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600 hover:scale-105 hover:shadow-yellow-500/40 shadow-lg focus:outline-none"
               >
-                <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300 lg:text-md
-                  text-sm">
+                <span className="z-10 relative group-hover:translate-y-[-2px] group-hover:brightness-110 transition-all duration-300 lg:text-md text-sm">
                   Zobacz nasze prace
                 </span>
                 <span className="absolute inset-0 w-full h-full transition-opacity duration-300 bg-white opacity-0 group-hover:opacity-10 rounded-full"></span>
@@ -101,7 +114,9 @@ export default function Page () {
             </Link>
           </div>
 
-          <p className="lg:text-4xl text-3xl text-balance">Zaprojektujemy dla ciebie dekorację na każdą okazję</p>
+          <p className="lg:text-4xl text-3xl text-balance">
+            Zaprojektujemy dla ciebie dekorację na każdą okazję
+          </p>
 
           <div>
             <p className="lg:text-3xl text-2xl p-4">Jesteśmy na</p>
